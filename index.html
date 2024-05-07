@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM-Event Comment System</title>
+</head>
+
+<body>
+  <section>
+    <div class="" id="comment-box">
+      <h1>Add your comment here</h1>
+
+      <p>eius odio maxime soluta assumenda architecto amet est eaque cumque saepe impedit molestiae repudiandae quasi
+        ea! Optio corrupti sunt in fuga laboriosam, nesciunt doloribus laborum unde incidunt iste suscipit quos beatae
+        soluta commodi.</p>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ipsa labore, vel ad necessitatibus dolorum
+        consequatur voluptas ea! Optio corrupti sunt in fuga laboriosam, nesciunt doloribus laborum unde incidunt iste
+        suscipit quos beatae
+        soluta commodi..</p>
+    </div>
+    <div>
+      <textarea name="" id="new-comment" cols="100" rows="5"></textarea><br>
+      <button id="post-comment">Add Post</button>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('post-comment').addEventListener('click', function () {
+
+      //get value from textarea input field
+      const commentInput = document.getElementById('new-comment');
+      const text = commentInput.value;
+
+      //create new element <p> ... </p> tag and insert content (text value) in the element
+      const p = document.createElement('p')
+      p.innerText = text;
+
+      //insert new child element into parent element
+      const divParent = document.getElementById('comment-box');
+      divParent.appendChild(p);
+
+      //clear value
+      commentInput.value = " ";
+
+    })
+
+  </script>
+
+</body>
+
+</html>
